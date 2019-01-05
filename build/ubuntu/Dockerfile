@@ -11,18 +11,18 @@ RUN apt-get update \
  && virtualenv -p python3 venv \
  && . venv/bin/activate \
  && pip install --upgrade setuptools \
- && git clone https://github.com/Bertrand256/dash-masternode-tool \
- && cd dash-masternode-tool/ \
+ && git clone https://github.com/fonero-project/fonero-masternode-tool \
+ && cd fonero-masternode-tool/ \
  && pip install -r requirements.txt \
  && cd ~/dmt \
  && echo "#!/bin/sh" | tee build-dmt.sh \
  && echo "cd ~/dmt" | tee -a build-dmt.sh \
  && echo ". venv/bin/activate" | tee -a build-dmt.sh \
- && echo "cd dash-masternode-tool" | tee -a build-dmt.sh \
+ && echo "cd fonero-masternode-tool" | tee -a build-dmt.sh \
  && echo "git fetch --all" | tee -a build-dmt.sh \
  && echo "git reset --hard origin/master" | tee -a build-dmt.sh \
  && echo "pip install -r requirements.txt" | tee -a build-dmt.sh \
- && echo "pyinstaller --distpath=../dist/linux --workpath=../dist/linux/build dash_masternode_tool.spec" | tee -a build-dmt.sh \
+ && echo "pyinstaller --distpath=../dist/linux --workpath=../dist/linux/build fonero_masternode_tool.spec" | tee -a build-dmt.sh \
  && echo "cd .." | tee -a build-dmt.sh \
  && chmod +x build-dmt.sh
 

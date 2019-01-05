@@ -84,7 +84,7 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='DashMasternodeTool',
+          name='FoneroMasternodeTool',
           debug=False,
           strip=False,
           upx=False,
@@ -93,7 +93,7 @@ exe = EXE(pyz,
 
 if os_type == 'darwin':
     app = BUNDLE(exe,
-                 name='DashMasternodeTool.app',
+                 name='FoneroMasternodeTool.app',
                  icon='img/dmt.icns',
                  bundle_identifier=None,
                      info_plist={
@@ -113,10 +113,10 @@ os.chdir(dist_path)
 
 if os_type == 'win32':
     print('Compressing Windows executable')
-    os.system('"7z.exe" a %s %s -mx0' % (os.path.join(all_bin_dir, 'DashMasternodeTool_' + version_str + '.win' + no_bits + '.zip'),  'DashMasternodeTool.exe'))
+    os.system('"7z.exe" a %s %s -mx0' % (os.path.join(all_bin_dir, 'FoneroMasternodeTool_' + version_str + '.win' + no_bits + '.zip'),  'FoneroMasternodeTool.exe'))
 elif os_type == 'darwin':
     print('Compressing Mac executable')
-    os.system('zip -r "%s" "%s"' % (os.path.join(all_bin_dir, 'DashMasternodeTool_' + version_str + '.mac.zip'),  'DashMasternodeTool.app'))
+    os.system('zip -r "%s" "%s"' % (os.path.join(all_bin_dir, 'FoneroMasternodeTool_' + version_str + '.mac.zip'),  'FoneroMasternodeTool.app'))
 elif os_type == 'linux':
     print('Compressing Linux executable')
-    os.system('tar -zcvf %s %s' % (os.path.join(all_bin_dir, 'DashMasternodeTool_' + version_str + '.linux.tar.gz'),  'DashMasternodeTool'))
+    os.system('tar -zcvf %s %s' % (os.path.join(all_bin_dir, 'FoneroMasternodeTool_' + version_str + '.linux.tar.gz'),  'FoneroMasternodeTool'))
