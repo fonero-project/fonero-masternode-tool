@@ -39,7 +39,7 @@ add_files = [
  ('img/save.png','/img'),
  ('img/thumbs-up-down.png','/img'),
  ('img/recover.png','/img'),
- ('version.txt', '')
+ ('version.txt', '.')
 ]
 
 lib_path = next(p for p in sys.path if 'site-packages' in p)
